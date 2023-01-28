@@ -14,15 +14,22 @@ Lê a entrada, lê algo da pilha(memória), escreve na pilha e avança para um d
 Lê a entrada, escreve na fita e determina a direção para qual a cabeço leitor irá e avança para um determinado estado
 
 
-## Utilização do simulador :
-Na main se é exigido primeiramente que seja inserido o path do specs, contendo informações como qual máquina será utilizada e suas características.
+## Funcionamento :
+Na main se é exigido primeiramente que seja inserido o path do specs, contendo informações sobre qual máquina será utilizada e suas características.
 Há de ser posto 4 vezes esse path:
 1º determina qual máquina será usada
 2º determina o estado inicial
 3º determina os estados finais
 4º determina as regras de transição
 
-De acordo com a máquina selecionada, será criado um objeto de sua classe na main e serão exigidos os paths do input, a palavra a ser processada, e do output, o local onde o resultado será armazenado, onde será possível visualizar se a entrada foi aceita ou rejeitada.
+Os 2 ultimos se utilzam de uma função semelhante para leitura, entretanto a diferença é que ela possui um split(";") pois diferente das 2 primeiras linhas de specs, essas possuem/podem possuir mais de 1 elemento na mesma linha, então esse split permite com que eles sejão lidos individualmente sem interferêncas do caractere que os separa uns dos outros.
+Como no caso de " 1;a;2 ", os elementos a serem considerados são "1","a" e "2" e o ";" apenas o separa pra que sejam "vistos" separadamente.
+
+De acordo com a máquina selecionada, será criado um objeto de sua classe na main com as informações obtidas anteriormente. 
+Após isso, é chamada uma função para o ler input(que requer o path desse input), que desa vez possui um split("") para ler cada caractere separamente, considerando que diferente da linha de regra de transição do specs (que tem ";" separando os caracteres), no input todos os caracteres estão "colados".
+E por último é chamada uma função para analisar o input, que requer o path do input que será analisado para escreve-lo junto com seu status(Aceito ou rejeitado) no output que teve seu path inserido. (A única excessão é na MT, pois é exigido o conteúdo da fita e não simplesmente o do input, então nele é necessário somente o path do output)
+A análise se baseia em comparar se o estado inicial e o caractere lido do input em uma certa parte dessa são iguais aos 2 primeiros caracteres de alguma da regras de transicao(que contem o estado atual e o caractere lido quando naquele estado). Se houver uma regra de transição compativel são efetuadas as mudanças de acordo com a máquina(empilhar, escrever na fita, etc) e o estado da máquina é atualizado. Se não, o estado da máquina é atualizado para um estado inalcançável, assim rejeitando a entrada.
+Ao terminar de ler o último caractere de uma linha do input( uma palavra completa), se é feita uma checagem para haver a conclusão se a palavra foi aceita ou rejeitada. Se no final o estado da máquina for um estado final, a palavra é aceita, se não ela é rejeitada. (no AP também é exigido que a pilha esteja vazia para haver a aceitação) 
 
 ## Exemplos
 
