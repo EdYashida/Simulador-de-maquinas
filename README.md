@@ -28,7 +28,9 @@ Como no caso de " 1;a;2 ", os elementos a serem considerados são "1","a" e "2" 
 De acordo com a máquina selecionada, será criado um objeto de sua classe na main com as informações obtidas anteriormente. 
 Após isso, é chamada uma função para o ler input(que requer o path desse input), que desa vez possui um split("") para ler cada caractere separamente, considerando que diferente da linha de regra de transição do specs (que tem ";" separando os caracteres), no input todos os caracteres estão "colados".
 E por último é chamada uma função para analisar o input, que requer o path do input que será analisado para escreve-lo junto com seu status(Aceito ou rejeitado) no output que teve seu path inserido. (A única excessão é na MT, pois é exigido o conteúdo da fita e não simplesmente o do input, então nele é necessário somente o path do output)
+
 A análise se baseia em comparar se o estado inicial e o caractere lido do input em uma certa parte dessa são iguais aos 2 primeiros caracteres de alguma da regras de transicao(que contem o estado atual e o caractere lido quando naquele estado). Se houver uma regra de transição compativel são efetuadas as mudanças de acordo com a máquina(empilhar, escrever na fita, etc) e o estado da máquina é atualizado. Se não, o estado da máquina é atualizado para um estado inalcançável, assim rejeitando a entrada.
+
 Ao terminar de ler o último caractere de uma linha do input( uma palavra completa), se é feita uma checagem para haver a conclusão se a palavra foi aceita ou rejeitada. Se no final o estado da máquina for um estado final, a palavra é aceita, se não ela é rejeitada. (no AP também é exigido que a pilha esteja vazia para haver a aceitação) 
 
 ## Exemplos
