@@ -27,9 +27,9 @@ De acordo com a máquina selecionada, será criado um objeto de sua classe na ma
 ## Exemplos
 
 ## AFD - Presença de subpalavra "aa" ou "bb"
-# Specs
+###### Specs
 
-'''
+```
 f
 1
 4
@@ -41,24 +41,24 @@ f
 3;b;4
 4;a;4
 4;b;4
-'''
+```
 
-# Input
+###### Input
 
-# Output
+###### Output
 
 ## AP - Palavra e seu contrário
 
-# Specs
+###### Specs
 
-# Input
+###### Input
 
-# Output
+###### Output
 
 ## AP - Mesma quantidade de "a" e "b" na palavra
 
-# Specs
+###### Specs
 
-# Input
+###### Input
 
-# Output
+###### Output
