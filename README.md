@@ -45,20 +45,129 @@ f
 
 ###### Input
 
+```
+abba
+bbb
+bab
+aabba
+abbaab
+abab
+aaaa
+abb
+abababaaababab
+ababababbba
+```
+
 ###### Output
 
-## AP - Palavra e seu contrário
+```
+A;abba
+A;bbb
+R;bab
+A;aabba
+A;abbaab
+R;abab
+A;aaaa
+A;abb
+A;abababaaababab
+A;ababababbba
+```
+
+## AP - Palavra e seu contrário considerando apenas aquelas formadas por "a" e "b"
 
 ###### Specs
 
+```
+p
+0
+2
+0;a;_;A;0
+0;b;_;B;0
+0;_;_;_;1
+1;a;A;_;1
+1;b;B;_;1
+1;.;_;_;2
+
+```
+
 ###### Input
 
+```
+ab_ba.
+aab_baa.
+abb_bab.
+abbb_bbba.
+abba_abaa.
+ab_aa_bb.aab_a
+aa_a.
+ababba_abbaba.
+abc_cba.
+aa_aa.
+bb_bb.
+cc_cc.
+  
+```
+Nesse input os "_"  simbolziam movimento vazio  e os "." simbolizam o o final da entrada 
+
 ###### Output
+
+```
+A;abba
+A;aabbaa
+R;abbbab
+A;abbbbbba
+R;abbaabaa
+R;abaabbaaba
+R;aaa
+A;ababbaabbaba
+R;abccba
+A;aaaa
+A;bbbb
+R;cccc
+```
 
 ## AP - Mesma quantidade de "a" e "b" na palavra
 
 ###### Specs
 
+```
+t
+0
+4
+0;a;A;D;1
+0;B;B;D;3
+1;a;a;D;1
+1;B;B;D;1
+1;b;B;E;2
+2;a;a;E;2
+2;B;B;E;2
+2;A;A;D;0
+3;B;B;D;3
+3;_;_;D;4
+0;_;_;D;4
+```
+
 ###### Input
 
+```
+ab_
+aab_
+abbb_
+aaaaabbb_
+aaaabb_
+aaabbb_
+_
+```
+Nesse input os "_" simbolizam a celula em branco, ou seja, o final da palavra de entrada
+
 ###### Output
+
+```
+S;tape --  AB
+S;tape --  AAB
+S;tape --  ABbb
+S;tape --  AAAAaBBB
+S;tape --  AAAaBB
+S;tape --  AAABBB
+S;tape --  
+```
