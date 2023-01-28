@@ -14,11 +14,11 @@ public class Della {
         List<String[]> trans = new ArrayList<String[]>();
        
         
-        maq=Leitor.leitor("C:\\Users\\eduar\\OneDrive\\Área de Trabalho\\Códigos\\Della\\AP\\specs.txt",0);
+        maq=Leitor.leitor("specs path da maquina desejada",0);
         //System.out.println("tipo de maquina"+maq);
-        eIn=Leitor.leitor("C:\\Users\\eduar\\OneDrive\\Área de Trabalho\\Códigos\\Della\\AP\\specs.txt",1);
+        eIn=Leitor.leitor("specs path da maquina desejada",1);
        // System.out.println("estado inicial:"+eIn);
-        eFi=Leitor.leitorMaisDUm("C:\\Users\\eduar\\OneDrive\\Área de Trabalho\\Códigos\\Della\\AP\\specs.txt",2);
+        eFi=Leitor.leitorMaisDUm("specs path da maquina desejada",2);
         //for(int j=0;j<2;j++){
        // System.out.println("estado final:"+eFi[j]);
        // }
@@ -26,7 +26,7 @@ public class Della {
         
         for(int i=3;trans!=null;i++){
         try{
-        trans.add(Leitor.leitorMaisDUm("C:\\Users\\eduar\\OneDrive\\Área de Trabalho\\Códigos\\Della\\AP\\specs.txt", i));
+        trans.add(Leitor.leitorMaisDUm("specs path da maquina desejada", i));
        // System.out.println(trans);
     }
        catch(IndexOutOfBoundsException exc){
@@ -56,9 +56,9 @@ public class Della {
           System.out.println("Automato Finito Deterministico Selecionado"); 
           
           AF afd= new AF(eIn, eFi,trans);
-          afd.leInput("C:\\Users\\eduar\\OneDrive\\Área de Trabalho\\Códigos\\Della\\AFD\\input.txt");
+          afd.leInput("input AF path");
           //System.out.println(afd.estadoAtualF);
-          afd.check("C:\\Users\\eduar\\OneDrive\\Área de Trabalho\\Códigos\\Della\\AFD\\input.txt","C:\\Users\\eduar\\OneDrive\\Área de Trabalho\\Códigos\\Della\\AFD\\output.txt" );
+          afd.check("input AF path","output AF path" );
        }
        
        else if("p".equals(maq)){
@@ -88,17 +88,17 @@ public class Della {
            
            System.out.println("Automato de Pilha Selecionado"); 
            AP afp= new AP(eIn, eFi,trans);
-           afp.leInput("C:\\Users\\eduar\\OneDrive\\Área de Trabalho\\Códigos\\Della\\AP\\Input.txt");
+           afp.leInput("input AP path");
            //afp.checarPilha("C:\\Users\\eduar\\OneDrive\\Área de Trabalho\\Códigos\\Della\\AP\\Input.txt");
-           afp.check("C:\\Users\\eduar\\OneDrive\\Área de Trabalho\\Códigos\\Della\\AP\\Input.txt", "C:\\Users\\eduar\\OneDrive\\Área de Trabalho\\Códigos\\Della\\AP\\Output.txt");
+           afp.check("input AP path", "output AP path");
            
        }
        
        else if("t".equals(maq)){
            System.out.println("Maquina de Turing selecionada");
            MT mt=new MT(eIn, eFi,trans);
-           mt.leInput("C:\\Users\\eduar\\OneDrive\\Área de Trabalho\\Códigos\\Della\\MT\\input.txt");
-           mt.check("C:\\Users\\eduar\\OneDrive\\Área de Trabalho\\Códigos\\Della\\MT\\output.txt");
+           mt.leInput("input MT path");
+           mt.check("output MT path");
        }
        
        else{
