@@ -126,7 +126,7 @@ A;bbbb
 R;cccc
 ```
 
-## AP - Mesma quantidade de "a" e "b" na palavra
+## MT - Mesma quantidade de "a" e "b" na palavra
 
 ###### Specs
 
