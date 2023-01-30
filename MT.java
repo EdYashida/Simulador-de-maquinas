@@ -54,6 +54,7 @@ public void check(String outputpath) throws IOException{
        estadoAtualT=estadoInicialT;
        String[]fita= input.get(i); //cria a fita
        int t=-1;   //count da fita, comeca como -1 pq comeca com D, entao vai ter t++ deixando t=0
+                   // Junto a isso, ao iniciar direcao como null,parado, etc e t=0, o processamento ocorre de forma não desejada, normalmente ignorando a primeira célula/caracere do input
        int compativel=0;
 
        while(true){
