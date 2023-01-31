@@ -14,7 +14,7 @@ public class MT extends Leitor{
     List<String[]> input = new ArrayList<String[]>();
     String output;
     List<String> resultado = new ArrayList<String>();
-
+    String direcao="D"; //inicializa movendo para a direita da fita
     int tamanhoInput=0;
 
     //le input
@@ -44,7 +44,7 @@ public class MT extends Leitor{
         return printado;
     }
 public void check(String outputpath) throws IOException{
-       String direcao="D"; //inicializa movendo para a direita da fita
+       
 
        /*
        Path arq = Paths.get(entrada);                      nao eh necessario pois precisar ter conteudo da fita no output
