@@ -38,11 +38,6 @@ public class MT extends Leitor{
     this.transicaoT=transicaoT;
     }
 
-    public String toString(String [] input){    //usar fita.toString nao funciona da forma desejada
-        String printado= Arrays.toString(input).replace("[","").replace(",","").replace(" ","").replace("]","").replace("_","");
-        //retirar caracteres indesejados que aparecem no output
-        return printado;
-    }
 public void check(String outputpath) throws IOException{
        
 
@@ -93,4 +88,10 @@ public void check(String outputpath) throws IOException{
        escrever(outputpath,resultado);
        System.out.println("Leitura Finalizada");
 }
+    
+        public String toString(String [] conteudoFita){    //usar fita.toString nao funciona da forma desejada
+        String printado= Arrays.toString(conteudoFita).replace("[","").replace(",","").replace(" ","").replace("]","").replace("_","");
+        //retirar caracteres indesejados que aparecem no output
+        return printado;
+    }
 }
